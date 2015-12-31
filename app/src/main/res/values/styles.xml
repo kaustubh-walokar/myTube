@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   your app branding color for the app bar -->
+        <!--<item name="colorAccent">#FF4081</item>-->
+    </style>
+
+    <style name="myTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionMenuTextColor">@android:color/holo_blue_light</item>
+    </style>
+
+    <style name="myTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:titleTextStyle">@style/myTheme.ActionBar.Text</item>
+    </style>
+
+    <style name="myTheme.ActionBar.Text" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+    </style>
+
+</resources>

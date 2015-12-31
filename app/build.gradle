@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'serendipity'
+            keyPassword 'serendipity'
+            storeFile file('/Users/kaustubh/keystore_android/key_kaustubh_new.jks')
+            storePassword 'serendipity'
+        }
+        config1 {
+            keyAlias 'madhura'
+            keyPassword 'madhura'
+            storeFile file('/Users/kaustubh/keystore_android/key_madhura.jks')
+            storePassword 'madhura'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.cmpe277.lab2.mytube"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.config1
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config1
+        }
+        debug {
+            signingConfig signingConfigs.config1
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.google.android.gms:play-services-identity:8.1.0'
+    compile 'com.google.android.gms:play-services-plus:8.1.0'
+    compile 'com.android.support:design:23.0.0'
+}
